@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>synthicy</title>
+  <meta name="description" content="yo mama heavier than node_modules" />
+  <meta name="author" content="synthicy" />
+  <meta property="og:type" content="site" />
+  <meta property="og:title" content="synthicy.com" />
+  <meta property="og:description" content="synthicy is very hot" />
+  <meta property="og:url" content="https://synthicy.com/" />
+  <meta property="og:image" content="assets/icons/favicon.png" />
+  <meta itemprop="name" content="synthicy.com" />
+  <meta itemprop="description" content="synthicy is very hot" />
+  <meta itemprop="image" content="assets/icons/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css" />
+  <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
+  <link href="maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+  <script type="text/javascript" src="assets/javascript/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+  <script src="./assets/javascript/index.js"></script>
+
+  <div class="container">
+    <img class="logo" src="./assets/others/dolphin.gif" alt="logo">
+
+    <p class="top-right" id="ip">
+      WAIT BRO
+    </p>
+
+    <p class="content" id="content">
+      can you believe this stupid site needs javascript?
+    </p>
+    <p>
+      <a class="hvr-grow" href="https://discord.bio/p/synth">discord</a> <a class="hvr-grow"
+        href="https://keybase.io/synt">keybase</a>
+      <a class="hvr-grow" href="https://github.com/synthicy">github</a> <a class="hvr-grow"
+        href="https://steamcommunity.com/id/synthicy/">steam</a>
+      <a class="hvr-grow" href="https://gab.com/synt">gab</a> <a class="hvr-grow"
+        href="https://twitter.com/synthcy">twitter</a> <a class="hvr-grow" href="https://auraside.com">auraside</a>
+    </p>
+
+    <div class="background" style="display: none;">
+      <div id="pattern"></div>
+
+      <video id="background" loop autoplay>
+        <source src="./assets/video_background.mp4" type="video/mp4" />
+      </video>
+
+    </div>
+  </div>
+
+  <script>
+    const element = document.querySelector('#content')
+    element.text = 'if you can see this you are awesome :3'
+
+    fetch('https://www.reddit.com/r/Showerthoughts.json?raw_json=1&amp;limit=10')
+      .then(res => res.text())
+      .then(text => {
+        if (!text) {
+          element.text = 'what are you using? internet explorer? it didnt let me get reddit posts >:('
+          return
+        }
+
+        const body = JSON.parse(text)
+        const posts = body.data.children.filter(p => !p.data.pinned && !p.data.stickied)
+        const post = posts[Math.floor(Math.random() * posts.length)]
+
+        let title = post.data.title.trim()
+
+        if (!title.endsWith('.')) title += '.'
+
+        title = title.toLowerCase()
+        title += ' '
+        element.textContent = title
+
+        const attr = document.createElement('a')
+        attr.setAttribute('href', post.data.url)
+        attr.setAttribute('target', '_blank')
+        attr.innerText = post.data.author.toLowerCase()
+        element.appendChild(attr)
+      })
+      .catch(e => {
+        console.error(e)
+        element.textContent = 'something went wrong :('
+      })
+  </script>
+</body>
+
+</html>

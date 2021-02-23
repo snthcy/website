@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Monument Extended";
+  src: url("../fonts/monument_extended.woff") format('woff');
+}
+@font-face {
+  font-family: "courier_regular";
+  src: url("../fonts/Consolas-Mono.ttf");
+}
+
+html {
+  cursor: url('../others/cursor.png'), default;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000000;
+  color: #b5b0b0;
+}
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  font-family: "Monument Extended";
+  padding: 4px;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  transform: scale(1.1);
+}
+
+a {
+  color: rgb(245, 192, 255);
+}
+a:active {
+  color: salmon;
+}
+
+.gradient {
+  animation: rainbowRotate 5s ease-in-out infinite;
+  background: linear-gradient(255deg, #3b55ac, #5ee9ff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container {
+  font-size: 0.85rem;
+  font-family: 'courier_regular';
+  text-align: center;
+  padding: 10px 30px;
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 9px;
+  animation: rainbowRotate 5s ease-in-out infinite;
+  background: linear-gradient(-69deg, #3b55ac, #5ee9ff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes rainbowRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+}
+
+@media (min-width: 1280px) {
+  .content {
+  max-width: 40vw;
+}
+}
