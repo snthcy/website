@@ -1,12 +1,12 @@
-const iplocation = "https://api.ipgeolocation.io/ipgeo?apiKey=1785ed53312f42c7b5ef89f65c3faa1a";
+ const iplocation = "https://api.ipgeolocation.io/ipgeo?apiKey=1785ed53312f42c7b5ef89f65c3faa1a";
 
-  $.getJSON(iplocation, (data) => {
+   $.getJSON(iplocation, (data) => {
 
-    const ip = data.ip;
-    const country = data.country_name ? data.country_name : 'your country';
+     const ip = data.ip;
+     const country = data.country_name ? data.country_name : 'your country';
 
-    $("p#ip").html(`<p class="top-right">${ip} ${country}</p>`);
-  })
+     $("p#ip").html(`<p class="top-right">${ip} ${country}</p>`);
+   })
 
 titleChanger = (text, delay) => {
   if (!text) return;
@@ -22,6 +22,12 @@ titleChanger = (text, delay) => {
 };
 
 titleChanger(["synthicy", "synth#0001", "if you can see this say hi to me", "hone.gg", "mantle.gg", "#otters4life"], 2000);
+
+cheet('l o l', function () {
+  let audio = new Audio("./assets/others/gecs.mp3")
+  audio.play()
+  document.getElementById("logo").src = "./assets/others/lol.gif";
+});
 
 function thoughts() {
   const element = document.querySelector('#content')
@@ -58,5 +64,3 @@ function thoughts() {
         element.textContent = 'something went wrong :('
       })
 }
-
-

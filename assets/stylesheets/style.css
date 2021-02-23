@@ -48,8 +48,8 @@ a:active {
 }
 
 .gradient {
-  animation: rainbowRotate 5s ease-in-out infinite;
-  background: linear-gradient(255deg, #3b55ac, #5ee9ff);
+  animation: rainbowRotate 0.4s ease-in-out infinite;
+  background: linear-gradient(to right, #ff0000, #ffc400, #ffff00, #00FF00, #009fff, #6f00ff);
   background-size: 300%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -61,6 +61,11 @@ a:active {
   font-family: 'courier_regular';
   text-align: center;
   padding: 10px 30px;
+}
+
+.geocities {
+  width: 200;
+  height: 200;
 }
 
 .top-right {
