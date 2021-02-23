@@ -24,9 +24,9 @@ titleChanger = (text, delay) => {
 titleChanger(["synthicy", "synth#0001", "if you can see this say hi to me", "hone.gg", "mantle.gg", "#otters4life"], 2000);
 
 cheet('l o l', function () {
-  let audio = new Audio("./assets/others/gecs.mp3")
+  let audio = new Audio("../assets/others/gecs.mp3")
   audio.play()
-  document.getElementById("logo").src = "./assets/others/lol.gif";
+  document.getElementById("logo").src = "../assets/others/lol.gif";
 });
 
 function thoughts() {
