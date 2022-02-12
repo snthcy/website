@@ -1,4 +1,4 @@
- const iplocation = "https://api.ipgeolocation.io/ipgeo?apiKey=1785ed53312f42c7b5ef89f65c3faa1a";
+ const iplocation = "https://api.ipgeolocation.io/ipgeo?apiKey=b047f3afe9fa44dca7f0c00a17443003";
 
    $.getJSON(iplocation, (data) => {
 
@@ -21,9 +21,9 @@ titleChanger = (text, delay) => {
   }, delay);
 };
 
-titleChanger(["synthicy", "synth#0001", "if you can see this say hi to me", "hone.gg", "mantle.gg", "#otters4life"], 2000);
+titleChanger(["normie", "synthi#0001", "if you can see this say hi to me", "discord.fmhy.tk", "make information free again", "#otters4life"], 2000);
 
-cheet('l o l', function () {
+cheet('a w e s o m e', function () {
   let audio = new Audio("../assets/others/gecs.mp3")
   audio.play()
   document.getElementById("logo").src = "../assets/others/lol.gif";
